@@ -1,0 +1,57 @@
+<div class="card" [@flipState]="flip">
+  <div class="card-box__side card-box__front">
+    <div class="card--header">
+      <h2>{{ item.title }}</h2>
+      <div>
+        <button class="btn-no-outline" (click)="edit(item)">
+          <i class="icon-pencil"></i>
+        </button>
+        <button (click)="toggleFlip()" class="btn-no-outline">
+          <i class="icon-change"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card--body">
+      <div class="date">
+        <i class="icon-calendar"></i>
+        {{getDate(item.date)}}
+      </div>
+      <div class="tag" [style]="{'background-color': getBackground(item.tag)}">
+        {{item.tag}}
+      </div>
+      <div class="buttons">
+        <button class="btn-no-outline" (click)="remove(item)">
+          <i class="icon-garbage"></i>
+        </button>
+        <div class="checkbox">
+          <input type="checkbox" [checked]="item.done" [id]="item.id" (click)="toggleCheckbox(item)" />
+          <label [for]="item.id"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-box__side card-box__back">
+    <div class="card--header">
+      <p>{{ item.notes }}</p>
+      <div>
+        <button class="btn-no-outline" (click)="edit(item)">
+          <i class="icon-pencil"></i>
+        </button>
+        <button (click)="toggleFlip()" class="btn-no-outline">
+          <i class="icon-change"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card--body">
+      <div class="buttons">
+        <button class="btn-no-outline" (click)="remove(item)">
+          <i class="icon-garbage"></i>
+        </button>
+        <div class="checkbox">
+          <input type="checkbox" [checked]="item.done" [id]="item.id" (click)="toggleCheckbox(item)" />
+          <label [for]="item.id"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

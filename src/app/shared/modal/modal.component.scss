@@ -1,0 +1,144 @@
+@import "../../../assets/variables.scss";
+
+.btn-no-outline {
+  color: black;
+}
+
+.modal {
+  background-color: black;
+}
+
+::ng-deep .modal-content {
+  background-color: var(--container-body-background-color);
+  border-radius: 16px;
+  border: 1px solid var(--border-color-modal);
+}
+
+.custom-modal {
+  padding: 24px 24px 16px !important;
+
+  &__header {
+    text-align: center;
+    h1 {
+      margin: 0;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 39px;
+      background: var(--container-header-title-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__content {
+    h1 {
+      margin-bottom: 16px;
+      font-size: 2.0rem;
+      font-weight: 700;
+    }
+    input {
+      display: flex;
+      width: 100%;
+      background-color: var(--input-background-color);
+      height: 49px;
+      border-radius: 10px;
+      outline: none;
+      box-shadow: none;
+      border: 0;
+      color: var(--input-text-color);
+      font-size: 1.4rem;
+      font-weight: 700;
+      padding: 16px 24px;
+
+      &::placeholder {
+        color: var(--input-text-color);
+        opacity: 80%;
+      }
+    }
+    textarea {
+      background-color: var(--input-background-color);
+      border-radius: 10px;
+      outline: none;
+      box-shadow: none;
+      border: 0;
+      color: var(--input-text-color);
+      font-size: 1.4rem;
+      font-weight: 700;
+      padding: 16px 24px;
+    }
+
+    ::-webkit-calendar-picker-indicator {
+      filter: invert(1.2);
+      font-size: 3rem;
+      cursor: pointer;
+    }
+
+    .radio-button {
+      display: flex;
+      flex-direction: column;
+      [type="radio"]:checked,
+      [type="radio"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+      }
+      [type="radio"]:checked + label,
+      [type="radio"]:not(:checked) + label {
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        display: inline-block;
+        color: var(--text-color);
+        margin-bottom: 8px;
+      }
+      [type="radio"]:checked + label:before,
+      [type="radio"]:not(:checked) + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--text-color);;
+        border-radius: 100%;
+        background: transparent;
+      }
+      [type="radio"]:checked + label:after,
+      [type="radio"]:not(:checked) + label:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: var(--text-color);;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        border-radius: 100%;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+      [type="radio"]:not(:checked) + label:after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+      [type="radio"]:checked + label:after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  i {
+    font-size: 2.2rem;
+    color: var(--button-backgroud-color);
+  }
+}

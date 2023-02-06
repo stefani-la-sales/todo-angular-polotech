@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import 'assets/variables.scss';
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import 'assets/icomoon/style.css';
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: var(--background-gradient);
+  color: var(--text-color) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--scrollbar-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-background-color-hover);
+}
+
+.btn {
+  color: var(--button-text-color);
+  background-color: var(--button-backgroud-color);
+  border: none;
+  box-shadow: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus, &:focus-visible {
+    box-shadow: none;
+    color: var(--button-text-color);
+  }
+}
+
+.btn-no-outline {
+  color: var(--button-backgroud-color);
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus, &:focus-visible {
+    box-shadow: none;
+    color: var(--button-backgroud-color);
+  }
+}
+

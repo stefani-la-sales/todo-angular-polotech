@@ -1,0 +1,48 @@
+<div class="custom-modal-wrapper">
+  <div class="custom-modal">
+    <div class="custom-modal__header">
+      <h1>Nova tarefa</h1>
+
+      <button class="btn-no-outline btn-close" (click)="activeModal.close(false)">
+        <i class="icon-close"></i>
+      </button>
+    </div>
+
+    <div class="custom-modal__content" [formGroup]="formGroup">
+      <div class="my-4">
+        <input type="text" formControlName="title" placeholder="Titulo" />
+      </div>
+      <div>
+        <input type="date" formControlName="date">
+      </div>
+      <div class="my-3 radio-button">
+        <h1>Prioridade</h1>
+        <input id="baixa" value="baixa" type="radio" formControlName="tag" />
+        <label for="baixa">Baixa</label>
+
+        <input id="media" value="media" type="radio" formControlName="tag" />
+        <label for="media"> Média </label>
+
+        <input id="alta" value="alta" type="radio" formControlName="tag" />
+        <label for="alta"> Alta </label>
+
+        <input id="altissima" value="altissima" type="radio" formControlName="tag" />
+        <label for="altissima"> Altissima </label>
+      </div>
+
+      <div>
+        <h1>Observações</h1>
+        <label>
+          <textarea rows="4" cols="46" formControlName="notes"></textarea>
+        </label>
+      </div>
+
+      <div class="row justify-content-end">
+        <button class="btn col-sm-12 col-md-3 col-lg-3 my-5 mr-2"
+          (click)="activeModal.close(false)">Cancelar</button>
+        <button class="btn col-sm-12 col-md-3 col-lg-3 mt-5 mb-5"
+          (click)="submitHandler()">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
